@@ -227,7 +227,7 @@ int main(void)
   const int MAX_LED = 4;
   int index_led = 0;
   HAL_TIM_Base_Start_IT(&htim2);
-  setTimer1(50);
+  setTimer1(100);
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
@@ -239,7 +239,7 @@ int main(void)
 		  }
 		  update7SEG(index_led);
 		  index_led++;
-		  setTimer1(50);
+		  setTimer1(100);
 	  }
     /* USER CODE BEGIN 3 */
   }
