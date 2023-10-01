@@ -288,17 +288,17 @@ void update7SEG ( int index ){
 		break ;
 	}
 }
-//void shift_array(uint8_t matrix_buffer[8]){
-//	uint8_t temp=matrix_buffer[0];
-//	matrix_buffer[0]=matrix_buffer[1];
-//	matrix_buffer[1]=matrix_buffer[2];
-//	matrix_buffer[2]=matrix_buffer[3];
-//	matrix_buffer[3]=matrix_buffer[4];
-//	matrix_buffer[4]=matrix_buffer[5];
-//	matrix_buffer[5]=matrix_buffer[6];
-//	matrix_buffer[6]=matrix_buffer[7];
-//	matrix_buffer[07]=temp;
-//}
+void shift_array(uint8_t matrix_buffer[8]){
+	uint8_t temp=matrix_buffer[0];
+	matrix_buffer[0]=matrix_buffer[1];
+	matrix_buffer[1]=matrix_buffer[2];
+	matrix_buffer[2]=matrix_buffer[3];
+	matrix_buffer[3]=matrix_buffer[4];
+	matrix_buffer[4]=matrix_buffer[5];
+	matrix_buffer[5]=matrix_buffer[6];
+	matrix_buffer[6]=matrix_buffer[7];
+	matrix_buffer[07]=temp;
+}
 int hour,minute,second;
 void updateClockBuffer(){
 	led_buffer[0]=(hour/10)%10;
@@ -390,7 +390,7 @@ int main(void)
 		  updateLEDMatrix(index_matrix);
 		  index_matrix++;
 		  if(index_matrix>=8){
-//			  shift_array(matrix_buffer);
+			  shift_array(matrix_buffer);
 			  index_matrix=0;
 		  }
 		  setTimer2(51);
