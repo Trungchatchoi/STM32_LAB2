@@ -349,7 +349,7 @@ int main(void)
   HAL_TIM_Base_Start_IT(&htim2);
   setTimer0(100);
   setTimer1(39);
-  setTimer2(51);
+  setTimer2(1);
   setTimer3(57);
   hour=12;
   minute=54;
@@ -393,7 +393,7 @@ int main(void)
 			  shift_array(matrix_buffer);
 			  index_matrix=0;
 		  }
-		  setTimer2(51);
+		  setTimer2(1);
 	  }
 	  if(timer3_flag==1){
 		  HAL_GPIO_TogglePin(GPIOA, DOT_Pin);

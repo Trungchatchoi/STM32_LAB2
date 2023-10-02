@@ -493,7 +493,7 @@ void display7SEG(int num){
 08000464 <updateLEDMatrix>:
 
 const int MAX_LED_MATRIX = 8;
-uint8_t matrix_buffer[8]={0xFF,0x01,0x00,0xEE,0xEE,0x00,0x01,0xFF};
+uint8_t matrix_buffer[8]={0xFF,0x03,0xCD,0xCD,0xCD,0xCD,0x03,0xFF};
 void updateLEDMatrix (int index ){
  8000464:	b580      	push	{r7, lr}
  8000466:	b082      	sub	sp, #8
@@ -1804,8 +1804,8 @@ int main(void)
   setTimer1(39);
  8000f32:	2027      	movs	r0, #39	; 0x27
  8000f34:	f000 f98e 	bl	8001254 <setTimer1>
-  setTimer2(51);
- 8000f38:	2033      	movs	r0, #51	; 0x33
+  setTimer2(1);
+ 8000f38:	2001      	movs	r0, #1
  8000f3a:	f000 f99f 	bl	800127c <setTimer2>
   setTimer3(57);
  8000f3e:	2039      	movs	r0, #57	; 0x39
@@ -1939,8 +1939,8 @@ int main(void)
  8000ffc:	2300      	movs	r3, #0
  8000ffe:	607b      	str	r3, [r7, #4]
 		  }
-		  setTimer2(51);
- 8001000:	2033      	movs	r0, #51	; 0x33
+		  setTimer2(1);
+ 8001000:	2001      	movs	r0, #1
  8001002:	f000 f93b 	bl	800127c <setTimer2>
 	  }
 	  if(timer3_flag==1){
